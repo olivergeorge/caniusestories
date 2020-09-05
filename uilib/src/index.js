@@ -1,1 +1,3 @@
-import Form from "./js/components/Form";
+import * as Button from "./stories/Button";
+
+export default Button;
