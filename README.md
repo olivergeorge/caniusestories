@@ -46,7 +46,7 @@ Rebuild your project, run the REPL:
 
 ```clj -m cljs.main -co build.edn -v -c -r```
 
-To verify that externs inference allows advanced compilation to work, let’s make an advanced build. REPLs don’t work under advanced compilation so you’ll have to manually open http://localhost:9000:
+Or prepare a release using advanced build:
 
-```clj -m cljs.main -co build.edn -O advanced -v -c -s```
+```clj -m cljs.main -co build.edn -O advanced -v -c```
 
