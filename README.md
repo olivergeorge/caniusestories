@@ -37,8 +37,8 @@ The `package.json` includes a dependency on the `../lib` dir since it's all in o
 
 To update the lib
 
-* `rm -fR node_modules; yarn` will recopy the lib over.  (you could just copy the dist/main.js file over really)
-* To use the lib require `caniusestories` and refer to the exported components.
+* `rm -fR node_modules; yarn` will recopy the lib over.  Note: you could just copy the dist/main.js file over.
+* To use the lib require `caniusestories` in your namespace and refer to the exported components.
 
 You'll see an example of this in [`app.core`](./app/src/app/core.cljs) namespace.
 
