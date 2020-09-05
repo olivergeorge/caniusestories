@@ -7,8 +7,8 @@ The lib directory is a react project setup with webpack for publishing and story
 
 To get started
 
-# `yarn` to install deps
-# `yarn run storybook` to boot up a development environment
+* `yarn` to install deps
+* `yarn run storybook` to boot up a development environment
 
 There are some example components and associated story files which demonstrate how you can hook them up in storybook.
 
@@ -24,8 +24,8 @@ Additionally, the storybook can be published as a static webapp.
 
 To publish new components
 
-# update `src/index.js` to include new components
-# `yarn run build` to generate a new dist/main.js
+* update `src/index.js` to include new components
+* `yarn run build` to generate a new dist/main.js
 
 ## Using components from Clojurescript reagent app
 
@@ -33,10 +33,10 @@ The `app` directory includes a simple CLJS app based on the CLJS webpack tutoria
 
 To update the lib
 
-# `rm -fR node_modules; yarn` will recopy the lib over.  (you could just copy the dist/main.js file over really)
-# To use the lib require `caniusestories` and refer to the exported components.
+* `rm -fR node_modules; yarn` will recopy the lib over.  (you could just copy the dist/main.js file over really)
+* To use the lib require `caniusestories` and refer to the exported components.
 
-You'll see an example of this in `app.core`
+You'll see an example of this in [`app.core`](./app/src/app/core.cljs)
 
 Rebuild your project, run the REPL:
 
