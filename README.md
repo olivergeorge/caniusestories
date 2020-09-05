@@ -3,7 +3,7 @@ This is an experiment of using pure react ui components developed leveraging sto
 
 ## Developing UI components
 
-The lib directory is a react project setup with webpack for publishing and storybook for development.
+The lib directory is a React project setup with webpack for publishing and storybook for development.
 
 To get started
 
@@ -18,25 +18,29 @@ Core storybook allows for
 * Adding controls to change props and see what happens
 * Logging events
 
-Additionally, the storybook can be published as a static webapp.
+Additionally, the storybook can be published as a static webapp with `yarn run build-storybook`.  
+
+View the static site locally with `cd storybook-static; python -m SimpleHTTPServer`
 
 ## Publishing UI component library
 
 To publish new components
 
-* update `src/index.js` to include new components
-* `yarn run build` to generate a new dist/main.js
+* update [`src/index.js`](./lib/src/index.js) to include new components
+* `yarn run build` to generate a new `dist/main.js` which you could publish to npm
 
 ## Using components from Clojurescript reagent app
 
-The `app` directory includes a simple CLJS app based on the CLJS webpack tutorial.  The `package.json` includes a dependency on the `../lib` dir.
+The `app` directory includes a simple CLJS app based on the CLJS webpack tutorial.  
+
+The `package.json` includes a dependency on the `../lib` dir since it's all in one repo.
 
 To update the lib
 
 * `rm -fR node_modules; yarn` will recopy the lib over.  (you could just copy the dist/main.js file over really)
 * To use the lib require `caniusestories` and refer to the exported components.
 
-You'll see an example of this in [`app.core`](./app/src/app/core.cljs)
+You'll see an example of this in [`app.core`](./app/src/app/core.cljs) namespace.
 
 Rebuild your project, run the REPL:
 
