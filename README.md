@@ -3,7 +3,7 @@ This is an experiment of using pure React UI components developed leveraging sto
 
 ## Developing UI components
 
-The `lib` directory is a React project setup with webpack for publishing and storybook for development.
+The `lib` directory is a React project setup with storybook for development and babel to compile files for reuse.
 
 To get started
 
@@ -24,23 +24,38 @@ View the static site locally with `cd storybook-static; python -m SimpleHTTPServ
 
 ## Publishing UI component library
 
-To publish new components
+Our source code uses JSX and newer JS language features which constrain who can use our library.
 
-* update [`src/index.js`](./lib/src/index.js) to include new components
-* `yarn run build` to generate a new `dist/main.js` which you could publish to npm
+We could help consumers in two ways
+1. Use Babel to compile files down to a backwards compatible version of javascript
+2. Use Webpack to bundle our code up as a single file library
 
-## Using components from Clojurescript Reagent app
+In this case we're not bundling.  Individual files will allow us to consume specific components with less overhead.
 
-The `app` directory includes a simple CLJS app based on the [CLJS webpack tutorial](https://clojurescript.org/guides/webpack).  
+The compilation step is not essential.  We could consume these files by doing the compilation step in our app by adding the necessary Babel settings to the webpack config.
+
+To update the library
+
+* Edit or add code in the [`src`](./lib/src) directory
+* Update [`src/index.js`](./lib/src/index.js) to include any new components
+* Recompile with `yarn run build`
+
+Alternatively, `yarn run watch` will process files as they change.
+
+## Using components from ClojureScript Reagent app
+
+The [`app`](./app) directory includes a simple CLJS app based on the [CLJS webpack tutorial](https://clojurescript.org/guides/webpack).  
 
 Our UI lib is just another dep.  The `package.json` includes a dependency on the `../lib` dir since it's all in one repo.
 
 To update the lib
 
-* `rm -fR node_modules; yarn` will ensure node_modules is fresh.  Note: you could just copy the dist/main.js file over.
-* To use the lib require `caniusestories` in your namespace and refer to the exported components.
+* `rm -fR node_modules; yarn` will ensure node_modules is fresh.  Consider `yarn link` if things are changing frequently.
 
-You'll see an example of this in [`app.core`](./app/src/app/core.cljs) namespace.
+To use components, either:
+
+1. Require `caniusestories` in your namespace and refer to the exported components.  You'll see an example of this in [`app.core`](./app/src/app/core.cljs) namespace.
+2. Require specific source files if you prefer, e.g. `["caniusestories/lib/stories/Button" :as Button]`
 
 Rebuild your project, run the REPL:
 
@@ -51,3 +66,9 @@ Or prepare a release using advanced build:
 ```clj -m cljs.main -co build.edn -O advanced -v -c -s```
 
 The `-s` flag starts a http server, browse to [http://localhost:9000](http://localhost:9000) to see the app running. 
+
+## What about styles?
+
+We're spoilt for choice here.  I'm not clear on the best approach.
+
+Currently Webpack is setup to inline CSS when it sees import statements.
