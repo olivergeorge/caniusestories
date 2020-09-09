@@ -14,10 +14,12 @@ link:
 	cd app; yarn link caniusestories
 
 build:
+	# Build development version
 	cd lib; yarn; yarn run build
 	cd app; yarn; clj -m cljs.main -co build.edn -v -c
 
 release:
+	# Build release version
 	cd lib; yarn; yarn run build
 	cd app; yarn; clj -m cljs.main -co build.edn -O advanced -v -c
 
