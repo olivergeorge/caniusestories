@@ -32,8 +32,6 @@ We could help consumers in two ways
 
 In this case we're not bundling.  Individual files will allow us to consume specific components with less overhead.
 
-The compilation step is not essential.  We could consume these files by doing the compilation step in our app by adding the necessary Babel settings to the webpack config.
-
 To update the library
 
 * Edit or add code in the [`src`](./lib/src) directory
