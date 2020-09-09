@@ -1,16 +1,14 @@
 module.exports = {
-  mode: 'production',
-  entry: './src/index.js',
-  output: {
-    libraryTarget: 'commonjs2'
-  },
   module: {
     rules: [
       {
-        test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+        test: /\.m?js$/,
+        exclude: /(node_modules|bower_components)/,
         use: {
-          loader: "babel-loader"
+          loader: 'babel-loader',
+          options: {
+            presets: ['@babel/preset-env']
+          }
         }
       },
       {
@@ -27,10 +25,6 @@ module.exports = {
           },
         ],
       },
-    ]
-  },
-  externals: {
-    'react': 'commonjs react',
-    'react-dom' : 'commonjs react-dom'
-  }
+    ],
+    },
 };
