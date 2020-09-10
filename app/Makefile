@@ -4,7 +4,7 @@ clean:
 
 setup:
 	yarn
-	yarn link caniusestories
+	yarn link caniusestories-lib
 
 build:
 	clj -m cljs.main -co build.edn -v -c -r

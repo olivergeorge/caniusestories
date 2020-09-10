@@ -1,12 +1,12 @@
 (ns app.core
   (:require [goog.dom :as gdom]
             [reagent.dom :as dom]
-            [caniusestories]))
+            [caniusestories-lib :refer [Button]]))
 
 (defn simple-component []
   [:div
    [:p "I am a component!"]
-   [:> caniusestories/Button 
+   [:> Button 
     {:primary true
      :label "Roar"}]
    [:p.someclass

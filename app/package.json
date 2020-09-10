@@ -9,7 +9,7 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "caniusestories": "file:../lib",
+    "caniusestories-lib": "file:../lib",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }

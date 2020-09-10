@@ -1359,7 +1359,7 @@ caniuse-lite@^1.0.30001124:
   resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30001125.tgz#2a1a51ee045a0a2207474b086f628c34725e997b"
   integrity sha512-9f+r7BW8Qli917mU3j0fUaTweT3f3vnX/Lcs+1C73V+RADmFme+Ih0Br8vONQi3X0lseOe6ZHfsZLCA8MSjxUA==
 
-"caniusestories@file:../lib":
+"caniusestories-lib@file:../lib":
   version "1.0.0"
 
 chalk@^2.0.0, chalk@^2.4.2:

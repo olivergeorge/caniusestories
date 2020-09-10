@@ -1,5 +1,5 @@
 {
-  "name": "caniusestories",
+  "name": "caniusestories-lib",
   "version": "1.0.0",
   "main": "lib/index.js",
   "author": "Oliver George <oliver@condense.com.au>",
