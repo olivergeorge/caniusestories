@@ -3,8 +3,6 @@
             [reagent.dom :as dom]
             [caniusestories]))
 
-(.log js/console caniusestories)
-
 (defn simple-component []
   [:div
    [:p "I am a component!"]

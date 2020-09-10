@@ -46,9 +46,10 @@ The [`app`](./app) directory includes a simple CLJS app based on the [CLJS webpa
 
 Our UI lib is just another dep.  The `package.json` includes a dependency on the `../lib` dir since it's all in one repo.
 
-To update the lib
+By default, `node_modules` is a copy of the lib so we need a way to keep it fresh.  Two options
 
-* `rm -fR node_modules; yarn` will ensure node_modules is fresh.  Consider `yarn link` if things are changing frequently.
+1. Use `yarn link` which puts a symlink in place of the copied files.  `make setup` in the root directory does this for you.
+1. `rm -fR node_modules; yarn` to copy the files
 
 To use components, either:
 

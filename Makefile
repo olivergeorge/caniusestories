@@ -1,25 +1,18 @@
 
 clean:
-	# Fresh start
-	rm -fR lib/lib lib/node_modules app/out app/node_modules
+	$(MAKE) -C lib clean
+	$(MAKE) -C app clean
 
 setup:
-	# Fetch deps
-	cd lib; yarn
-	cd app; yarn
+	$(MAKE) -C lib setup
+	$(MAKE) -C app setup
 
-link:
-	# Seem lib changes immediately by using a symlink for app/node_modules/caniusestories
-	cd lib; yarn link
-	cd app; yarn link caniusestories
 
 build:
-	# Build development version
-	cd lib; yarn; yarn run build
-	cd app; yarn; clj -m cljs.main -co build.edn -v -c
+	$(MAKE) -C lib setup build
+	$(MAKE) -C app setup build
 
 release:
-	# Build release version
-	cd lib; yarn; yarn run build
-	cd app; yarn; clj -m cljs.main -co build.edn -O advanced -v -c
+	$(MAKE) -C lib setup build
+	$(MAKE) -C app setup release
 
