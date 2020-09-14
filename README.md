@@ -71,3 +71,7 @@ The `-s` flag starts a http server, browse to [http://localhost:9000](http://loc
 We're spoilt for choice here.  I'm not clear on the best approach.
 
 Currently Webpack is setup to inline CSS when it sees import statements.
+
+## Outstanding
+
+[Sensible webpack config](https://ask.clojure.org/index.php/9602/recommended-webpack-config-for-clojurescript-bundle-target)
