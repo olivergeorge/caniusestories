@@ -75,3 +75,5 @@ Currently Webpack is setup to inline CSS when it sees import statements.
 ## Outstanding
 
 [Sensible webpack config](https://ask.clojure.org/index.php/9602/recommended-webpack-config-for-clojurescript-bundle-target)
+
+yarn link vs multiple copies of react - do we really need to modify webpack.config.js to include an alias?
